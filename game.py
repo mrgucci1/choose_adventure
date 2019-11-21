@@ -1,6 +1,14 @@
 import random
 import math
 
+def win(score):
+	scoretobeat = 1000
+	if score > scoretobeat:
+			print("you win!")
+	else: 
+		sum = scoretobeat - score
+		print("you lose by: ",sum," points")
+		
 def path1(score):
 	print("You Choose path 1! You begin walking up a stairway...")
 	print("At the top of the stairway is a hallway leading right and one leading left")
@@ -12,7 +20,8 @@ def path1(score):
 		print("you get submerged in cement and suffocate!")
 		print("plus 3 points")
 		score = score + 3
-		print("Score: " ,score)	
+		print("Score: " ,score)
+		win(score)		
 	if choice == 2:
 		print("you discover the something shiny and gold.......")
 		print("its an enchated golden apple!")
@@ -21,20 +30,16 @@ def path1(score):
 			print("you become a KING with superpowers")
 			score = score + 14000
 			print("Score: " ,score)
+			win(score)
 		if choice == 2:
 			print("you sell the apple for a MILLIONS!!!!!!!")
 			print("plus 16.7k points")
 			score = score + 16700
 			print("Score: " ,score)	
-			if score > scoretobeat:
-				print("you win!")
-			else:
-				sum = scoretobeat - score
-				print("you lose by: ",sum," points")
+			win(score)
 		
 		
 def path2(score):
-	scoretobeat = 1000
 	print("You Choose path 2! You begin walking throw a meadow...")
 	print("you see something in the grass....investigate?")
 	choice = int(input("Enter 1 to investigate or Enter 2 to run away"))
@@ -46,16 +51,12 @@ def path2(score):
 		if number > 60: 
 			print("the beast's health was to much for you to handle! you dided")
 			print("your final score was ", score)
+			win(score)
 		else:
 			print("you killed the beast and gained 100 points!")
 			score = score + 100
 			print("Score: " ,score)
-			if score > scoretobeat:
-				print("you win!")
-			else: 
-				sum = scoretobeat - score
-				print("you lose by: ",sum," points")
-							
+			win(score)						
 	elif choice == 2:
 		print("you run past the beast and see it attaking another person!")
 		print("you sneak up behind the beast")
@@ -88,11 +89,7 @@ def path2(score):
 		print("plus 1000 points!")
 		score = score + 1000
 		print("Score: " ,score)	
-		if score > scoretobeat:
-			print("you win!")
-		else: 
-			sum = scoretobeat - score
-			print("you lose by: ",sum," points")
+		win(score)-
 				
 				
 		
@@ -100,14 +97,9 @@ def path2(score):
 		
 #path 3 is loss right away
 def path3(score):
-	scoretobeat = 1000
 	print("You Choose path 3! You disapear!")
 	print("your final score was: ",score)
-	if score > scoretobeat:
-			print("you win!")
-	else: 
-		sum = scoretobeat - score
-		print("you lose by: ",sum," points")
+	win(score)
 	
 def main():
 	print "Welcome to Choose your own Adventure!"
